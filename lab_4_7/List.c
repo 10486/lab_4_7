@@ -19,11 +19,11 @@ void append(List* list, Aeroflot* el) {
 			Node* current = list->head->next;
 			if (current != NULL) {
 				while (compare_by_destination(el, current->data) >= 0) {
-					current = current->next;
 					if (current->next == NULL) {
 						current->next = tmp;
 						return;
 					}
+					current = current->next;
 				}
 			}
 			list->head->next = tmp;

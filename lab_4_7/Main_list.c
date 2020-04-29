@@ -8,6 +8,7 @@
 void main() {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
+	printf("Названия писать слитно или через '_'\n");
 	int counter = 0, tmp;
 	List* list =calloc(1, sizeof(List));
 	Aeroflot* t;
