@@ -1,21 +1,21 @@
-#include "List.h"
+п»ї#include "List.h"
 #include <stdio.h>
 #include <malloc.h>
 void append(List* list, Aeroflot* el) {
 	Node* tmp = calloc(1, sizeof(Node));
 	tmp->data = el;
-	// Вставляем элемент если список пуст
+	// Р’СЃС‚Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚ РµСЃР»Рё СЃРїРёСЃРѕРє РїСѓСЃС‚
 	if (list->head == NULL) {
 		list->head = tmp;
 	}
 	else {
-		// Вставляем эелмент если первый элемент больше нового или равен ему
+		// Р’СЃС‚Р°РІР»СЏРµРј СЌРµР»РјРµРЅС‚ РµСЃР»Рё РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ Р±РѕР»СЊС€Рµ РЅРѕРІРѕРіРѕ РёР»Рё СЂР°РІРµРЅ РµРјСѓ
 		if (compare_by_destination(el, list->head->data) < 0) {
 			tmp->next = list->head;
 			list->head = tmp;
 		}
 		else {
-			// Идем по списку пока не дойдем до конца или не найдем элемет больше нового
+			// РРґРµРј РїРѕ СЃРїРёСЃРєСѓ РїРѕРєР° РЅРµ РґРѕР№РґРµРј РґРѕ РєРѕРЅС†Р° РёР»Рё РЅРµ РЅР°Р№РґРµРј СЌР»РµРјРµС‚ Р±РѕР»СЊС€Рµ РЅРѕРІРѕРіРѕ
 			Node* current = list->head->next;
 			if (current != NULL) {
 				while (compare_by_destination(el, current->data) >= 0) {
@@ -32,17 +32,17 @@ void append(List* list, Aeroflot* el) {
 }
 void find_in_list(List* list, char* type) {
 	char flag = 0;
-	// крутой проход по списку в цикле for
+	// РєСЂСѓС‚РѕР№ РїСЂРѕС…РѕРґ РїРѕ СЃРїРёСЃРєСѓ РІ С†РёРєР»Рµ for
 	for (Node* tmp = list->head; tmp != NULL; tmp = tmp->next)
 	{
-		// Выводим если мы нашли нужный элемент 
+		// Р’С‹РІРѕРґРёРј РµСЃР»Рё РјС‹ РЅР°С€Р»Рё РЅСѓР¶РЅС‹Р№ СЌР»РµРјРµРЅС‚ 
 		if (!strcmp(tmp->data->type_of_aircraft, type)){
 			output_struct(tmp->data);
 			flag = 1;
 		}
 	}
 	if (!flag) {
-		printf("Самолетов такого типа нет\n");
+		printf("РЎР°РјРѕР»РµС‚РѕРІ С‚Р°РєРѕРіРѕ С‚РёРїР° РЅРµС‚\n");
 	}
 
 }
