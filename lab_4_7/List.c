@@ -9,16 +9,16 @@ void append(List* list, Aeroflot* el) {
 		list->head = tmp;
 	}
 	else {
-		// Вставляем эелмент если первый элемент меньше нового или равен ему
-		if (compare_by_destination(el, list->head->data) >= 0) {
+		// Вставляем эелмент если первый элемент больше нового или равен ему
+		if (compare_by_destination(el, list->head->data) < 0) {
 			tmp->next = list->head;
 			list->head = tmp;
 		}
 		else {
-			// Идем по списку пока не дойдем до конца или не найдем элемет меньше нового
+			// Идем по списку пока не дойдем до конца или не найдем элемет больше нового
 			Node* current = list->head->next;
 			if (current != NULL) {
-				while (compare_by_destination(el, current->data) < 0) {
+				while (compare_by_destination(el, current->data) >= 0) {
 					current = current->next;
 					if (current->next == NULL) {
 						current->next = tmp;
