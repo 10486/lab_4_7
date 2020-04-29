@@ -1,11 +1,11 @@
-#pragma once
+п»ї#pragma once
 #include "aeroflot.h"
-// Элемент списка с данными и ссылкой на следующий элемент
+// Р­Р»РµРјРµРЅС‚ СЃРїРёСЃРєР° СЃ РґР°РЅРЅС‹РјРё Рё СЃСЃС‹Р»РєРѕР№ РЅР° СЃР»РµРґСѓСЋС‰РёР№ СЌР»РµРјРµРЅС‚
 typedef struct node {
 	struct node* next;
 	Aeroflot* data;
 }Node;
-// Односвязный список
+// РћРґРЅРѕСЃРІСЏР·РЅС‹Р№ СЃРїРёСЃРѕРє
 typedef struct list {
 	Node* head;
 }List;

@@ -1,14 +1,14 @@
-#pragma once
-#define DESTNATION_NAME_LENGTH 30 //длинна названия пункта назначения
-#define TYPE_OF_AIRCRAFT_NAME 20 // длинна названия типа самолета
-// Определение структуры
+п»ї#pragma once
+#define DESTNATION_NAME_LENGTH 30 //РґР»РёРЅРЅР° РЅР°Р·РІР°РЅРёСЏ РїСѓРЅРєС‚Р° РЅР°Р·РЅР°С‡РµРЅРёСЏ
+#define TYPE_OF_AIRCRAFT_NAME 20 // РґР»РёРЅРЅР° РЅР°Р·РІР°РЅРёСЏ С‚РёРїР° СЃР°РјРѕР»РµС‚Р°
+// РћРїСЂРµРґРµР»РµРЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹
 typedef struct aeroflot
 {
 	char destination[DESTNATION_NAME_LENGTH];
 	int number;
 	char type_of_aircraft[TYPE_OF_AIRCRAFT_NAME];
 }Aeroflot;
-// Объявление функций связанныху со структурой
+// РћР±СЉСЏРІР»РµРЅРёРµ С„СѓРЅРєС†РёР№ СЃРІСЏР·Р°РЅРЅС‹С…Сѓ СЃРѕ СЃС‚СЂСѓРєС‚СѓСЂРѕР№
 void input_struct(Aeroflot* a);
 void output_struct(Aeroflot* a);
 char compare_by_destination(const Aeroflot* f, const Aeroflot* s);

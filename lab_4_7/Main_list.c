@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include "aeroflot.h"
 #include "List.h"
 #include <stdio.h>
@@ -13,17 +13,17 @@ void main() {
 	Aeroflot* t;
 	do
 	{
-		// Выделяем память и вводим структуру
+		// Р’С‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ Рё РІРІРѕРґРёРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
 		t = malloc(sizeof(Aeroflot));
 		input_struct(t);
-		// Добавляем в список
+		// Р”РѕР±Р°РІР»СЏРµРј РІ СЃРїРёСЃРѕРє
 		append(list, t);
 		counter++;
-		printf("Продолжить ввод (1-да, 0-нет)\n");
+		printf("РџСЂРѕРґРѕР»Р¶РёС‚СЊ РІРІРѕРґ (1-РґР°, 0-РЅРµС‚)\n");
 		scanf("%d", &tmp);
 	} while (tmp);
 	char flag = 0, input[TYPE_OF_AIRCRAFT_NAME];
-	printf("Введите название типа самолета: ");
+	printf("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С‚РёРїР° СЃР°РјРѕР»РµС‚Р°: ");
 	scanf("%s", input);
 	find_in_list(list, input);
 }
